@@ -137,8 +137,6 @@
 			<li class="header">Namespace</li>
 		<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands">Remora<wbr>.Discord<wbr>.API<wbr>.Abstractions<wbr>.Gateway<wbr>.Commands</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Enum Types</li>
-				<li class="selected"><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/GatewayIntents">GatewayIntents</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/IConnectionProperties">I<wbr>Connection<wbr>Properties</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/IGatewayCommand">IGatewayCommand</a></li>
@@ -148,6 +146,8 @@
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/IShardIdentification">IShardIdentification</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/IUpdatePresence">IUpdatePresence</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/IUpdateVoiceState">IUpdateVoiceState</a></li>
+			<li class="header">Enum Types</li>
+				<li class="selected"><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/GatewayIntents">GatewayIntents</a></li>
 
 
                     </ul>
@@ -221,7 +221,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>[Flags, PublicAPI]
+	<pre><code>[PublicAPI, Flags]
 public enum GatewayIntents</code></pre>
 
 
@@ -237,11 +237,11 @@ public enum GatewayIntents</code></pre>
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>FlagsAttribute</td>
+						<td>PublicAPI</td>
 						<td></td>
 					</tr>
 					<tr>
-						<td>PublicAPI</td>
+						<td>FlagsAttribute</td>
 						<td></td>
 					</tr>
 			</tbody></table>
@@ -316,12 +316,13 @@ public enum GatewayIntents</code></pre>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/GatewayIntents/069A407E">GuildEmojis</a></td>
+								<td><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Commands/GatewayIntents/47D04DAF">Guild<wbr>Emojis<wbr>And<wbr>Stickers</a></td>
 								<td>8</td>
 								<td>
 									<div>
     Subscribes to the following events:
         - GUILD_EMOJIS_UPDATE
+        - GUILD_STICKERS_UPDATE
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -333,6 +334,9 @@ public enum GatewayIntents</code></pre>
 									<div>
     Subscribes to the following events:
         - GUILD_INTEGRATIONS_UPDATE
+        - INTEGRATION_CREATE
+        - INTEGRATION_UPDATE
+        - INTEGRATION_DELETE
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -358,6 +362,7 @@ public enum GatewayIntents</code></pre>
         - GUILD_MEMBER_ADD
         - GUILD_MEMBER_UPDATE
         - GUILD_MEMBER_REMOVE
+        - THREAD_MEMBERS_UPDATE
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -450,6 +455,14 @@ public enum GatewayIntents</code></pre>
         - CHANNEL_UPDATE
         - CHANNEL_DELETE
         - CHANNEL_PINS_UPDATE
+        - THREAD_CREATE
+        - THREAD_UPDATE
+        - THREAD_DELETE
+        - THREAD_LIST_SYNC
+        - THREAD_MEMBER_UPDATE
+        - THREAD_MEMBERS_UPDATE
+        - STAGE_INSTANCE_UPDATE
+        - STAGE_INSTANCE_DELETE
     </div>
 											<div><small><em>static</em></small></div>
 								</td>

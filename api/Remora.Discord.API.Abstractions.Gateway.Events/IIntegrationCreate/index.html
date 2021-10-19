@@ -138,9 +138,6 @@
 		<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events">Remora<wbr>.Discord<wbr>.API<wbr>.Abstractions<wbr>.Gateway<wbr>.Events</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Interface Types</li>
-				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IApplicationCommandCreate">I<wbr>Application<wbr>Command<wbr>Create</a></li>
-				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IApplicationCommandDelete">I<wbr>Application<wbr>Command<wbr>Delete</a></li>
-				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IApplicationCommandUpdate">I<wbr>Application<wbr>Command<wbr>Update</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IChannelCreate">IChannelCreate</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IChannelDelete">IChannelDelete</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IChannelPinsUpdate">IChannelPinsUpdate</a></li>
@@ -159,6 +156,7 @@
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGuildRoleCreate">IGuildRoleCreate</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGuildRoleDelete">IGuildRoleDelete</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGuildRoleUpdate">IGuildRoleUpdate</a></li>
+				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGuildStickersUpdate">IGuildStickersUpdate</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGuildUpdate">IGuildUpdate</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IHello">IHello</a></li>
 				<li class="selected"><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IIntegrationCreate">IIntegrationCreate</a></li>
@@ -232,6 +230,7 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IIntegration">IIntegration</a></li>								
+											<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IPartialIntegration">IPartialIntegration</a></li>								
 											<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGatewayEvent">IGatewayEvent</a></li>								
 											<li><a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway/IGatewayPayloadData">IGatewayPayloadData</a></li>								
 									</ul>
@@ -246,10 +245,12 @@
 							graph BT
 	Type-.-&gt;Interface0["IIntegration"]
 	click Interface0 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IIntegration"
-	Type-.-&gt;Interface1["IGatewayEvent"]
-	click Interface1 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGatewayEvent"
-	Type-.-&gt;Interface2["IGatewayPayloadData"]
-	click Interface2 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway/IGatewayPayloadData"
+	Type-.-&gt;Interface1["IPartialIntegration"]
+	click Interface1 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IPartialIntegration"
+	Type-.-&gt;Interface2["IGatewayEvent"]
+	click Interface2 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway.Events/IGatewayEvent"
+	Type-.-&gt;Interface3["IGatewayPayloadData"]
+	click Interface3 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Gateway/IGatewayPayloadData"
 	Type["IIntegrationCreate"]
 class Type type-node
 
@@ -261,7 +262,8 @@ class Type type-node
 
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>[PublicAPI]
-public interface IIntegrationCreate : IIntegration, IGatewayEvent, IGatewayPayloadData</code></pre>
+public interface IIntegrationCreate : IIntegration, IPartialIntegration, IGatewayEvent, 
+    IGatewayPayloadData</code></pre>
 
 
 

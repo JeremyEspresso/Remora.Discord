@@ -74,7 +74,9 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Constructors">Constructors</a></p>
+<p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -141,6 +143,7 @@
 				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestChannelAPI">Caching<wbr>Discord<wbr>Rest<wbr>Channel<wbr>A<wbr>P<wbr>I</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestEmojiAPI">Caching<wbr>Discord<wbr>Rest<wbr>Emoji<wbr>A<wbr>P<wbr>I</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestGuildAPI">Caching<wbr>Discord<wbr>Rest<wbr>Guild<wbr>A<wbr>P<wbr>I</a></li>
+				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestInteractionAPI">Caching<wbr>Discord<wbr>Rest<wbr>Interaction<wbr>A<wbr>P<wbr>I</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestInviteAPI">Caching<wbr>Discord<wbr>Rest<wbr>Invite<wbr>A<wbr>P<wbr>I</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestOAuth2API">Caching<wbr>Discord<wbr>Rest<wbr>O<wbr>Auth2<wbr>A<wbr>P<wbr>I</a></li>
 				<li><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestTemplateAPI">Caching<wbr>Discord<wbr>Rest<wbr>Template<wbr>A<wbr>P<wbr>I</a></li>
@@ -168,7 +171,7 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Represents the Discord Webhook API.
+    Acts as an abstract base for REST API instances.
     </div>
 
 		<div class="panel panel-default">
@@ -191,6 +194,7 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
+											<li><a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI">Abstract<wbr>Discord<wbr>Rest<wbr>A<wbr>P<wbr>I</a></li>								
 											<li><a href="/Remora.Discord/api/Remora.Discord.Rest.API/DiscordRestWebhookAPI">Discord<wbr>Rest<wbr>Webhook<wbr>A<wbr>P<wbr>I</a></li>								
 									</ul>
 								</dd>				
@@ -203,7 +207,9 @@
 							graph BT
 	Type--&gt;Base0["DiscordRestWebhookAPI"]
 	click Base0 "/Remora.Discord/api/Remora.Discord.Rest.API/DiscordRestWebhookAPI"
-	Base0--&gt;Base1["object"]
+	Base0--&gt;Base1["AbstractDiscordRestAPI"]
+	click Base1 "/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI"
+	Base1--&gt;Base2["object"]
 	Type-.-&gt;Interface0["IDiscordRestWebhookAPI"]
 	click Interface0 "/Remora.Discord/api/Remora.Discord.API.Abstractions.Rest/IDiscordRestWebhookAPI"
 	Type["CachingDiscordRestWebhookAPI"]
@@ -216,10 +222,28 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class CachingDiscordRestWebhookAPI : DiscordRestWebhookAPI, IDiscordRestWebhookAPI</code></pre>
+	<pre><code>[PublicAPI]
+public class CachingDiscordRestWebhookAPI : DiscordRestWebhookAPI, IDiscordRestWebhookAPI</code></pre>
 
 
 
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>PublicAPI</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
 
 
@@ -245,6 +269,41 @@ class Type type-node
 
 
 
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI/D335E8AD">DiscordHttpClient</a></td>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Rest/DiscordHttpClient">DiscordHttpClient</a></td>
+								<td>
+									<div>
+    Gets the <code class="cs"><a href="/Remora.Discord/api/Remora.Discord.Rest/DiscordHttpClient">DiscordHttpClient</a></code> available to the API instance.
+    </div>
+											<div><small><em>Inherited from <a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI">Abstract<wbr>Discord<wbr>Rest<wbr>A<wbr>P<wbr>I</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI/C6781EC6">JsonOptions</a></td>
+								<td>Json<wbr>Serializer<wbr>Options</td>
+								<td>
+									<div>
+    Gets the <code class="cs">System.Text.Json.JsonSerializerOptions</code> available to the API instance.
+    </div>
+											<div><small><em>Inherited from <a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI">Abstract<wbr>Discord<wbr>Rest<wbr>A<wbr>P<wbr>I</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 			<h1 id="Methods">Methods</h1>
 			<div class="box">
@@ -276,6 +335,15 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestWebhookAPI/1B257749">Delete<wbr>Webhook<wbr>Message<wbr>Async<wbr>(Snowflake, <wbr>string, <wbr>Snowflake, <wbr>CancellationToken)<wbr></a></td>
+								<td>Task<wbr>&lt;Result&gt;<wbr></td>
+								<td>
+									<div>
+    Deletes a message posted by a webhook.
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestWebhookAPI/0E5BF0D0">Delete<wbr>Webhook<wbr>With<wbr>Token<wbr>Async<wbr>(Snowflake, <wbr>string, <wbr>CancellationToken)<wbr></a></td>
 								<td>Task<wbr>&lt;Result&gt;<wbr></td>
 								<td>
@@ -285,18 +353,17 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Remora.Discord/api/Remora.Discord.Rest.API/DiscordRestWebhookAPI/9B787FF2">Edit<wbr>Webhook<wbr>Message<wbr>Async<wbr>(Snowflake, <wbr>string, <wbr>Snowflake, <wbr>Optional<wbr>&lt;string?&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;IEmbed&gt;<wbr>?&gt;<wbr>, <wbr>Optional<wbr>&lt;<wbr>I<wbr>Allowed<wbr>Mentions?&gt;<wbr>, <wbr>Optional<wbr>&lt;FileData?&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;IAttachment&gt;<wbr>&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;<wbr>I<wbr>Message<wbr>Component&gt;<wbr>&gt;<wbr>, <wbr>CancellationToken)<wbr></a></td>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestWebhookAPI/60A6F961">Edit<wbr>Webhook<wbr>Message<wbr>Async<wbr>(Snowflake, <wbr>string, <wbr>Snowflake, <wbr>Optional<wbr>&lt;string?&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;IEmbed&gt;<wbr>?&gt;<wbr>, <wbr>Optional<wbr>&lt;<wbr>I<wbr>Allowed<wbr>Mentions?&gt;<wbr>, <wbr>Optional<wbr>&lt;FileData?&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;IAttachment&gt;<wbr>&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;<wbr>I<wbr>Message<wbr>Component&gt;<wbr>&gt;<wbr>, <wbr>CancellationToken)<wbr></a></td>
 								<td>Task<wbr>&lt;Result<wbr>&lt;<a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IMessage">IMessage</a>&gt;<wbr>&gt;<wbr></td>
 								<td>
 									<div>
-    Edits a messages posted by a webhook.
+    Edits a message posted by a webhook.
     </div>
-											<div><small><em>Inherited from <a href="/Remora.Discord/api/Remora.Discord.Rest.API/DiscordRestWebhookAPI">Discord<wbr>Rest<wbr>Webhook<wbr>A<wbr>P<wbr>I</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestWebhookAPI/1591B444">ExecuteWebhookAsync<wbr>(Snowflake, <wbr>string, <wbr>Optional<wbr>&lt;bool&gt;<wbr>, <wbr>Optional<wbr>&lt;string&gt;<wbr>, <wbr>Optional<wbr>&lt;string&gt;<wbr>, <wbr>Optional<wbr>&lt;string&gt;<wbr>, <wbr>Optional<wbr>&lt;bool&gt;<wbr>, <wbr>Optional<wbr>&lt;FileData&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;IEmbed&gt;<wbr>&gt;<wbr>, <wbr>Optional<wbr>&lt;<wbr>I<wbr>Allowed<wbr>Mentions&gt;<wbr>, <wbr>Optional<wbr>&lt;Snowflake&gt;<wbr>, <wbr>Optional<wbr>&lt;IReadOnlyList<wbr>&lt;<wbr>I<wbr>Message<wbr>Component&gt;<wbr>&gt;<wbr>, <wbr>CancellationToken)<wbr></a></td>
-								<td>Task<wbr>&lt;Result<wbr>&lt;<a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IMessage">IMessage</a>&gt;<wbr>&gt;<wbr></td>
+								<td>Task<wbr>&lt;Result<wbr>&lt;<a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IMessage">IMessage?</a>&gt;<wbr>&gt;<wbr></td>
 								<td>
 									<div>
     Executes the given webhook.
@@ -331,13 +398,12 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Remora.Discord/api/Remora.Discord.Rest.API/DiscordRestWebhookAPI/A500DA9A">Get<wbr>Webhook<wbr>Message<wbr>Async<wbr>(Snowflake, <wbr>string, <wbr>Snowflake, <wbr>CancellationToken)<wbr></a></td>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Caching.API/CachingDiscordRestWebhookAPI/889ADB19">Get<wbr>Webhook<wbr>Message<wbr>Async<wbr>(Snowflake, <wbr>string, <wbr>Snowflake, <wbr>CancellationToken)<wbr></a></td>
 								<td>Task<wbr>&lt;Result<wbr>&lt;<a href="/Remora.Discord/api/Remora.Discord.API.Abstractions.Objects/IMessage">IMessage</a>&gt;<wbr>&gt;<wbr></td>
 								<td>
 									<div>
     Gets a previously-sent webhook message.
     </div>
-											<div><small><em>Inherited from <a href="/Remora.Discord/api/Remora.Discord.Rest.API/DiscordRestWebhookAPI">Discord<wbr>Rest<wbr>Webhook<wbr>A<wbr>P<wbr>I</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -365,6 +431,17 @@ class Type type-node
 									<div>
     Modifies the given webhook.
     </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI/A015CCC3">WithCustomization<wbr>(Action<wbr>&lt;<wbr>Rest<wbr>Request<wbr>Builder&gt;<wbr>)<wbr></a></td>
+								<td><a href="/Remora.Discord/api/Remora.Discord.Rest/DiscordRequestCustomization">Discord<wbr>Request<wbr>Customization</a></td>
+								<td>
+									<div>
+    Creates a customization that will be applied to all requests made by the <code class="cs"><a href="/Remora.Discord/api/Remora.Discord.Rest/DiscordHttpClient">DiscordHttpClient</a></code>.
+    The customization is removed when it is disposed.
+    </div>
+											<div><small><em>Inherited from <a href="/Remora.Discord/api/Remora.Discord.Rest.API/AbstractDiscordRestAPI">Abstract<wbr>Discord<wbr>Rest<wbr>A<wbr>P<wbr>I</a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>
